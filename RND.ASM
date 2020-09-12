@@ -1,0 +1,16 @@
+ORG &c000
+
+RETVAL: DB 0
+RNDPTR: DW 0
+
+GET_RND_NUM:
+	LD	HL, (RNDPTR)
+	LD	A, H
+	AND	&1F
+	LD	H, A
+	LD	A, R
+	ADD	A, (HL)
+	INC	HL
+	LD	(RNDPTR), HL
+	LD	(RETVAL), A
+	RET
