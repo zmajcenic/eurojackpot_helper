@@ -1,1 +1,1 @@
-10 run"euro.bas"
+10 run"euro.asc"
